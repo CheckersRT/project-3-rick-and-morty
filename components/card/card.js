@@ -2,7 +2,6 @@ export function createCharacterCard(character) {
   const characterCard = document.createElement("li");
   characterCard.classList.add("card");
   characterCard.innerHTML = `
-  <li class="card">
           <div class="card__image-container">
             <img
               class="card__image"
@@ -21,9 +20,9 @@ export function createCharacterCard(character) {
               <dt class="card__info-title">Type</dt>
               <dd class="card__info-description"> ${character.type}</dd>
               <dt class="card__info-title">Occurrences</dt>
-              <dd class="card__info-description">${character.episodes.length}</dd>
+              <dd class="card__info-description">${character.episode.length}</dd>
             </dl>
           </div>
-        </li>
   `;
+  return characterCard;
 }
