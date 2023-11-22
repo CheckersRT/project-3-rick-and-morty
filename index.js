@@ -1,5 +1,6 @@
 import { createCharacterCard } from "./components/card/card.js";
 import navButton from "./components/nav-button/nav-button.js";
+import navPagination from "./components/nav-pagination/nav-pagination.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -15,6 +16,7 @@ const pagination = document.querySelector('[data-js="pagination"]');
 let maxPage = 1;
 let page = 1;
 let searchQuery = "";
+
 
 const prevOnClick = () => {
   page--;
@@ -40,6 +42,7 @@ const nextButton = navButton(
 );
 
 navigation.append(prevButton);
+navigation.append(navPagination(page, maxPage))
 navigation.append(nextButton);
 
 async function fetchCharacters() {
@@ -49,10 +52,11 @@ async function fetchCharacters() {
     );
 
     const data = await response.json();
+    maxPage = data.info.pages;
+    console.log(maxPage)
 
     const characterArray = data.results;
     cardContainer.innerHTML = "";
-    // console.log(characterArray);
 
     characterArray.map((character) => {
       const newCharacterCard = createCharacterCard(character);
