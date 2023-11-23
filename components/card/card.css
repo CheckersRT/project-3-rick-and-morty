@@ -23,3 +23,16 @@
 li {
   list-style: none;
 }
+
+.selected {
+  background-color: red;
+}
+
+.button--fight {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: red;
+  color: white;
+  font-size: 5em;
+}
