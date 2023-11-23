@@ -17,17 +17,20 @@ let maxPage = 1;
 let page = 1;
 let searchQuery = "";
 
-
-const prevOnClick = () => {
+const prevOnClick = (e) => {
   page--;
-  // function that chnages pagination
   fetchCharacters();
+  if(page < maxPage) {
+    nextButton.disabled = false;
+  }
 };
-const nextOnClick = () => {
+const nextOnClick = (e) => {
   page++;
   fetchCharacters();
+  if(page > 1) {
+    prevButton.disabled = false;
+  }
 };
-
 
 const pageNumbers = navPagination(page, maxPage);
 
@@ -46,7 +49,7 @@ const nextButton = navButton(
 );
 
 navigation.append(prevButton);
-navigation.append(pageNumbers)
+navigation.append(pageNumbers);
 navigation.append(nextButton);
 
 async function fetchCharacters() {
@@ -57,17 +60,24 @@ async function fetchCharacters() {
 
     const data = await response.json();
     maxPage = data.info.pages;
-    console.log(maxPage)
 
     pageNumbers.innerHTML = `${page}/${maxPage}`;
 
+    
     const characterArray = data.results;
     cardContainer.innerHTML = "";
-
+    
     characterArray.map((character) => {
       const newCharacterCard = createCharacterCard(character);
       return cardContainer.append(newCharacterCard);
     });
+
+    if(page === maxPage) {
+      nextButton.disabled = true
+    } else if (page === 1) {
+      prevButton.disabled = true;
+    }
+
   } catch (error) {
     console.error("Bad response");
   }
