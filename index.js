@@ -58,6 +58,7 @@ navigation.append(pageNumbers);
 navigation.append(nextButton);
 
 
+
 async function fetchCharacters() {
   try {
     const response = await fetch(
@@ -93,26 +94,42 @@ async function fetchCharacters() {
         button.addEventListener("click", (event) => {
           count++;
           console.log(count);
-          let fighterOne;
-          let fighterTwo;
+          // let fighterOne;
+          // let fighterTwo;
           console.log(characterCards);
-          if(count < 2) {
-            fighterOne = characterArray.filter((character, index2) => {
+          if(count === 1) {
+            let fighterOne = characterArray.filter((character, index2) => {
               if(index === index2) {
                 return character;
               }
             }).map((name) => name.name).toString();
-            // console.log(fighterOne);
-            
+            console.log(fighterOne);
             characterCards[index].classList.add("selected");
+            return fighterOne;
           } else if (count === 2) {
-            fighterTwo = characterArray.filter((character, index2) => {
+            let fighterTwo = characterArray.filter((character, index2) => {
               if(index === index2) {
                 return character;
               }
             }).map((name) => name.name).toString();
-            //  console.log(fighterTwo);
+
+             console.log(fighterTwo);
             characterCards[index].classList.add("selected");
+            // console.log(fighterOne);
+
+            const fightCharacters = (e) => {
+              console.log(fighterTwo);
+              if("fighterTwo".length >= "fighterTwo".length) {
+                let result = fighterTwo;
+                console.log(result);
+                return result;
+              } else {
+                let result = fighterTwo;
+                console.log(result);
+                return result;
+              }
+            }
+            
             const fightButton = navButton("button--fight", "", "Fight!", fightCharacters)
             document.body.append(fightButton);
           }
@@ -126,18 +143,6 @@ async function fetchCharacters() {
   
   fetchCharacters();
   
-  const fightCharacters = (One, Two) => {
-    console.log(One)
-    if(One.length >= Two.length) {
-      let result = fighterOne;
-      console.log(result);
-      return result;
-    } else {
-      result = fighterTwo;
-      console.log(result);
-      return result;
-    }
-  }
   
   
   
