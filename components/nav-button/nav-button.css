@@ -1,8 +1,11 @@
 .button {
   border: none;
+  border-radius: 5px;
 }
 
 .button:hover {
   background-color: var(--color-secondary);
+  border: 1px solid white;
+  color: white;
 }
 

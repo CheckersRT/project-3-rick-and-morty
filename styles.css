@@ -7,26 +7,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-
-:root {
-  --color-primary: rgb(51, 51, 51);
-  --color-secondary: #f6f6f6;
-  --font-family: system-ui;
-}
-
-body {
-  font-family: var(--font-family);
-  color: var(--color-primary);
-  padding: 20px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.home-background {
+  background-image: url("./assets/backgrund.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 .title {
-  padding: 10px 0;
+  padding-top: 10px;
+  color: rgb(239, 239, 239);
+  position: fixed;
+  right: 50px;
 }
