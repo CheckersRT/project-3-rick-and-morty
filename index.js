@@ -20,12 +20,16 @@ let searchQuery = "";
 
 const prevOnClick = () => {
   page--;
+  // function that chnages pagination
   fetchCharacters();
 };
 const nextOnClick = () => {
   page++;
   fetchCharacters();
 };
+
+
+const pageNumbers = navPagination(page, maxPage);
 
 const prevButton = navButton(
   "button--prev",
@@ -42,7 +46,7 @@ const nextButton = navButton(
 );
 
 navigation.append(prevButton);
-navigation.append(navPagination(page, maxPage))
+navigation.append(pageNumbers)
 navigation.append(nextButton);
 
 async function fetchCharacters() {
@@ -54,6 +58,8 @@ async function fetchCharacters() {
     const data = await response.json();
     maxPage = data.info.pages;
     console.log(maxPage)
+
+    pageNumbers.innerHTML = `${page}/${maxPage}`;
 
     const characterArray = data.results;
     cardContainer.innerHTML = "";
