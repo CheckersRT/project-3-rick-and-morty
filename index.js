@@ -90,51 +90,50 @@ async function fetchCharacters() {
       let count = 0;
       let maxCount = 2;
       
+      let fighterOne = "";
+      let fighterTwo = "";
+
       SelectButtons.forEach((button, index) => {
         button.addEventListener("click", (event) => {
           count++;
           console.log(count);
-          // let fighterOne;
-          // let fighterTwo;
-          console.log(characterCards);
+          
           if(count === 1) {
-            let fighterOne = characterArray.filter((character, index2) => {
+            fighterOne = characterArray.filter((character, index2) => {
               if(index === index2) {
                 return character;
               }
             }).map((name) => name.name).toString();
-            console.log(fighterOne);
             characterCards[index].classList.add("selected");
-            return fighterOne;
-          } else if (count === 2) {
-            let fighterTwo = characterArray.filter((character, index2) => {
+          } else if(count === 2) {
+            fighterTwo = characterArray.filter((character, index2) => {
               if(index === index2) {
                 return character;
               }
             }).map((name) => name.name).toString();
-
-             console.log(fighterTwo);
             characterCards[index].classList.add("selected");
-            // console.log(fighterOne);
 
-            const fightCharacters = (e) => {
-              console.log(fighterTwo);
-              if("fighterTwo".length >= "fighterTwo".length) {
-                let result = fighterTwo;
-                console.log(result);
-                return result;
+            characterCards.forEach((card) => {
+              console.log(card.classList.value);
+              if(card.classList.value !== "card selected") {
+                card.hidden = true;
+              }
+            })
+  
+            function fightCharacters() {
+              if(fighterOne.length >= fighterTwo.length) {
+                console.log(fighterOne)
+                return fighterOne;
               } else {
-                let result = fighterTwo;
-                console.log(result);
-                return result;
-              }
+                console.log(fighterTwo)
+                return fighterTwo;}
             }
-            
             const fightButton = navButton("button--fight", "", "Fight!", fightCharacters)
             document.body.append(fightButton);
-          }
-        })
-      });
+          } 
+        });
+      })
+
       
     } catch (error) {
       console.error("Bad response");
