@@ -32,10 +32,10 @@
 }
 
 .title {
-  padding-top: 10px;
   color: rgb(239, 239, 239);
   position: fixed;
   right: 50px;
+  width: 400px;
 }
 .selected {
   background: radial-gradient(
