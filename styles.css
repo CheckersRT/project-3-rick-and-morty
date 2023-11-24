@@ -68,9 +68,12 @@
   position: fixed;
   right: 50px;
   /* background-color: white; */
+  color: white;
 }
 
 .pickle {
   width: 40px;
   height: auto;
+  background-color: aliceblue;
+  border-radius: 500px;
 }
