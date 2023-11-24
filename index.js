@@ -1,7 +1,6 @@
 import { createCharacterCard } from "./components/card/card.js";
 import navButton from "./components/nav-button/nav-button.js";
 import navPagination from "./components/nav-pagination/nav-pagination.js";
-// import { selectCards } from "./components/battle/battle.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -124,6 +123,10 @@ async function fetchCharacters() {
           characterCards[index].classList.add("selected");
           homeBackground.classList.remove("home-background");
           homeBackground.classList.add("home-background-fight");
+          searchBarContainer.hidden = true;
+          prevButton.hidden = true;
+          nextButton.hidden = true;
+          pageNumbers.remove();
 
           characterCards.forEach((card) => {
             if (card.classList.value !== "selected") {
