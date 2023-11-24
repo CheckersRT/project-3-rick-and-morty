@@ -19,6 +19,18 @@
   margin: 0;
 }
 
+.home-background-fight {
+  background-image: url("./assets/633213.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
+  padding-bottom: 300px;
+}
+
+
 .title {
   padding-top: 10px;
   color: rgb(239, 239, 239);

@@ -69,13 +69,13 @@ li {
 }
 
 .selected {
-  background-color: red;
+  /* background-color: red; */
 }
 
 .button--fight {
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 200px;
+  top: 300px;
   background-color: red;
   color: white;
   font-size: 5em;
