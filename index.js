@@ -135,7 +135,11 @@ async function fetchCharacters() {
             if (fighterOne.length >= fighterTwo.length) {
               characterCards.forEach((card) => {
                 if (card.innerText.includes(fighterTwo)) {
-                  card.hidden = true;
+                  // card.hidden = true;
+                  card.classList.add("hidden");
+                } else {
+                  card.classList.remove("selected");
+                  card.classList.add("greenBg");
                 }
               });
               console.log(fighterOne);
@@ -143,7 +147,11 @@ async function fetchCharacters() {
             } else if (fighterOne.length < fighterTwo.length) {
               characterCards.forEach((card) => {
                 if (card.innerText.includes(fighterOne)) {
-                  card.hidden = true;
+                  // card.hidden = true;
+                  card.classList.add("hidden");
+                } else {
+                  card.classList.remove("selected");
+                  card.classList.add("greenBg");
                 }
               });
               console.log(fighterTwo);
