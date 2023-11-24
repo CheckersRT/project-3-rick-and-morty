@@ -23,7 +23,7 @@ export function createCharacterCard(character) {
               <dd class="card__info-description"> ${character.type}</dd>
               <dt class="card__info-title">Occurrences</dt>
               <dd class="card__info-description">${character.episode.length}</dd>
-              <button data-js="select-button">Select</button>
+              <button data-js="select-button" class = "select-button">Ready!</button>
             </dl>
           </div>
           </div>

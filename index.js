@@ -109,8 +109,8 @@ async function fetchCharacters() {
             })
             .map((name) => name.name)
             .toString();
+          characterCards[index].classList.remove("card");
           characterCards[index].classList.add("selected");
-          characterCards[index].style.backgroundColor = "blue";
         } else if (count === 2) {
           fighterTwo = characterArray
             .filter((character, index2) => {
@@ -120,31 +120,32 @@ async function fetchCharacters() {
             })
             .map((name) => name.name)
             .toString();
+          characterCards[index].classList.remove("card");
           characterCards[index].classList.add("selected");
           homeBackground.classList.remove("home-background");
           homeBackground.classList.add("home-background-fight");
 
           characterCards.forEach((card) => {
-            if (card.classList.value !== "card selected") {
+            if (card.classList.value !== "selected") {
               card.hidden = true;
             }
           });
-          
+
           function fightCharacters() {
             if (fighterOne.length >= fighterTwo.length) {
               characterCards.forEach((card) => {
-                if(card.innerText.includes(fighterTwo)) {
+                if (card.innerText.includes(fighterTwo)) {
                   card.hidden = true;
                 }
-              })
+              });
               console.log(fighterOne);
               return fighterOne;
-            } else if (fighterOne.length < fighterTwo.length){
+            } else if (fighterOne.length < fighterTwo.length) {
               characterCards.forEach((card) => {
-                if(card.innerText.includes(fighterOne)) {
+                if (card.innerText.includes(fighterOne)) {
                   card.hidden = true;
                 }
-              })
+              });
               console.log(fighterTwo);
               return fighterTwo;
             }
@@ -152,7 +153,8 @@ async function fetchCharacters() {
           const fightButton = navButton(
             "button--fight",
             "",
-            "Fight!",
+            "",
+
             fightCharacters
           );
           document.body.append(fightButton);

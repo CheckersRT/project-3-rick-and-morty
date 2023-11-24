@@ -25,11 +25,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+
+  max-height: 100vh;
   margin: 0;
   padding-bottom: 300px;
 }
-
 
 .title {
   padding-top: 10px;
@@ -37,3 +37,24 @@
   position: fixed;
   right: 50px;
 }
+.selected {
+  background: radial-gradient(
+    circle,
+    rgba(214, 86, 63, 1) 15%,
+    rgba(200, 37, 18, 1) 39%,
+    rgba(106, 26, 23, 1) 100%
+  );
+  width: 300px;
+  border-radius: 10px;
+}
+/* 
+.greenBg {
+  width: 300px;
+  border-radius: 10px;
+  background: radial-gradient(
+    circle,
+    rgba(18, 200, 48, 1) 20%,
+    rgba(25, 152, 35, 1) 57%,
+    rgba(32, 106, 23, 1) 100%
+  );
+} */

@@ -1,12 +1,4 @@
 .main-card-container {
-  background: radial-gradient(
-    circle,
-    rgba(255, 228, 196, 1) 12%,
-    rgba(241, 204, 160, 1) 49%,
-    rgba(221, 170, 108, 1) 88%,
-    rgba(208, 148, 74, 1) 100%,
-    rgba(190, 117, 27, 1) 100%
-  );
   border-radius: 10px;
 }
 
@@ -27,8 +19,18 @@
 }
 .card {
   width: 300px;
-  background-color: var(--color-secondary);
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 228, 196, 1) 12%,
+    rgba(241, 204, 160, 1) 49%,
+    rgba(221, 170, 108, 1) 88%,
+    rgba(208, 148, 74, 1) 100%,
+    rgba(190, 117, 27, 1) 100%
+  );
+  border-radius: 10px;
 }
+
 .card__image {
   width: 250px;
   border-radius: 500px;
@@ -68,15 +70,50 @@ li {
   list-style: none;
 }
 
-.selected {
-  /* background-color: red; */
+.button--fight {
+  background-image: url(../../assets/fight.png);
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 200px;
+  position: fixed;
+  right: 100px;
+
+  bottom: 10px;
+  background-color: transparent;
+  border: none;
+}
+.button--fight:hover {
+  box-shadow: inset 0 -3em 3em rgba(241, 204, 1, 0.3),
+    0.3em 0.3em 1em rgba(200, 160, 10, 0.6);
+  width: 370px;
+  height: 270;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.button--fight {
-  position: fixed;
-  right: 200px;
-  top: 300px;
-  background-color: red;
+.select-button {
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 37, 18, 1) 39%,
+    rgb(201, 106, 103) 100%
+  );
   color: white;
-  font-size: 5em;
+  margin: 2px;
+  padding-right: 5px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.select-button:hover {
+  background: radial-gradient(
+    circle,
+    rgba(214, 86, 63, 1) 15%,
+    rgba(200, 37, 18, 1) 39%,
+    rgba(106, 26, 23, 1) 100%
+  );
+  color: white;
+  border: 2px solid white;
 }
