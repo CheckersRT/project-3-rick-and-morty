@@ -1,7 +1,9 @@
 export function createCharacterCard(character) {
   const characterCard = document.createElement("li");
   characterCard.classList.add("card");
+  characterCard.setAttribute("data-js", "character-card");
   characterCard.innerHTML = `
+  <div class="main-card-container">
           <div class="card__image-container">
             <img
               class="card__image"
@@ -21,7 +23,9 @@ export function createCharacterCard(character) {
               <dd class="card__info-description"> ${character.type}</dd>
               <dt class="card__info-title">Occurrences</dt>
               <dd class="card__info-description">${character.episode.length}</dd>
+              <button data-js="select-button" class = "select-button">Ready!</button>
             </dl>
+          </div>
           </div>
   `;
   return characterCard;
