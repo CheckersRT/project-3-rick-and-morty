@@ -47,14 +47,19 @@
   width: 300px;
   border-radius: 10px;
 }
-/* 
+
 .greenBg {
   width: 300px;
   border-radius: 10px;
   background: radial-gradient(
     circle,
     rgba(18, 200, 48, 1) 20%,
-    rgba(25, 152, 35, 1) 57%,
-    rgba(32, 106, 23, 1) 100%
+    rgba(25, 152, 35, 1) 55%,
+    rgba(25, 79, 19, 1) 100%
   );
-} */
+}
+
+.hidden {
+  opacity: 0%;
+  transition: all 2s;
+}
